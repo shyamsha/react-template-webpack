@@ -6,7 +6,7 @@ const isProd = config.isProd;
 
 const API_ENDPOINT = isProd
   ? config.production.api_endpoint
-  : config.staging.api_endpoint;
+  : config.development.api_endpoint;
 
 export const login = (params) => {
   const url = `${API_ENDPOINT}/login`;
