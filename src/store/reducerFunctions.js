@@ -2,7 +2,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const initialState = {
-  countVal: 1,
+  countVal: 16,
 };
 
 const reducerFunctions = createSlice({
