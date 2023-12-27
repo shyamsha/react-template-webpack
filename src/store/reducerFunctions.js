@@ -16,6 +16,6 @@ const reducerFunctions = createSlice({
 });
 
 export const { setCountVal } = reducerFunctions.actions;
-export const selectorFunction = (state) => state.storeFunctions;
+export const counter = (state) => state.counter;
 
 export default reducerFunctions.reducer;

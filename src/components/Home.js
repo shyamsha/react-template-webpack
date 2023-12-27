@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { selectorFunction } from "../store/reducerFunctions";
+import { counter } from "../store/reducerFunctions";
 import { login } from "src/lib/services/postApis";
 import { useLocation } from "react-router-dom";
 const Home = () => {
-  const { countVal } = useSelector(selectorFunction);
+  const { countVal } = useSelector(counter);
   let location = useLocation();
   console.log(location);
   useEffect(() => {
