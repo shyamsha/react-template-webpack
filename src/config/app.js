@@ -8,7 +8,7 @@ const config = {
     api_endpoint: "",
   },
   development: {
-    api_endpoint: "",
+    api_endpoint: "https://otrackerapi-dev.onpassive.com",
   },
 };
 

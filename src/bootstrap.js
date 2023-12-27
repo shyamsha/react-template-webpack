@@ -1,7 +1,7 @@
 import React from "react";
 import App from "./App";
 import { createRoot } from "react-dom/client";
-
+import "./index.css";
 // import "bootstrap/scss/bootstrap.scss";
 
 const mount = (el) => {

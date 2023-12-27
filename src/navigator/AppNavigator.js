@@ -1,14 +1,49 @@
 import * as React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Counter from "src/components/Counter";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import Counter from "src/components/Counter";
 import Home from "src/components/Home";
-import Sidebar from "src/layouts/sidebar/Sidebar";
-import { routeEnums } from "./routeEnums";
+// import Sidebar from "src/layouts/sidebar/Sidebar";
+// import { routeEnums } from "./routeEnums";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+// import Contact, { loader as contactLoader } from "src/Contact";
+// import RouteError from "./RouteError";
+// import SideBar, {
+//   loader as rootLoader,
+//   action as rootAction,
+// } from "src/navigator/SideBar";
+// import EditContact, { action as editAction } from "src/EditContact";
 
 const AppNavigator = () => {
+  const router = createBrowserRouter([
+    // {
+    //   path: "/",
+    //   element: <SideBar />,
+    //   errorElement: <RouteError />,
+    //   loader: rootLoader,
+    //   action: rootAction,
+    //   children: [
+    //     {
+    //       path: "contacts/:contactId",
+    //       element: <Contact />,
+    //       loader: contactLoader,
+    //     },
+    //     {
+    //       path: "contacts/:contactId/edit",
+    //       element: <EditContact />,
+    //       loader: contactLoader,
+    //       action: editAction,
+    //     },
+    //   ],
+    // },
+    {
+      path: "home",
+      element: <Home />,
+    },
+  ]);
+
   return (
     <>
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
           <Route path="" element={<Sidebar />}>
             <Route index element={<Home />} />
@@ -16,7 +51,8 @@ const AppNavigator = () => {
             <Route path={routeEnums.COUNTER} element={<Counter />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <RouterProvider router={router} />
     </>
   );
 };

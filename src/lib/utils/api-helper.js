@@ -11,7 +11,6 @@ axios.interceptors.response.use(
   (error) => {
     if (error.response.status === 401) {
       clearFromLocalStorage("x-session-id");
-      window.location.href = "login";
     }
     return Promise.reject(error);
   }
