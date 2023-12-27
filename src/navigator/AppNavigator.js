@@ -3,15 +3,17 @@ import * as React from "react";
 // import Counter from "src/components/Counter";
 import Home from "src/components/Home";
 // import Sidebar from "src/layouts/sidebar/Sidebar";
-// import { routeEnums } from "./routeEnums";
+import { routeEnums } from "./routeEnums";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // import Contact, { loader as contactLoader } from "src/Contact";
-// import RouteError from "./RouteError";
+import RouteError from "./RouteError";
 // import SideBar, {
 //   loader as rootLoader,
 //   action as rootAction,
-// } from "src/navigator/SideBar";
+// } from "src/SideBar";
 // import EditContact, { action as editAction } from "src/EditContact";
+
+import NotFound from "./NotFound";
 
 const AppNavigator = () => {
   const router = createBrowserRouter([
@@ -36,8 +38,13 @@ const AppNavigator = () => {
     //   ],
     // },
     {
-      path: "home",
+      path: routeEnums.HOME,
       element: <Home />,
+      errorElement: <RouteError />,
+    },
+    {
+      path: "*",
+      element: <NotFound />,
     },
   ]);
 
