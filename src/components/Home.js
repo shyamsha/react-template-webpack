@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { counter } from "../store/reducerFunctions";
-import { login } from "src/lib/services/postApis";
+import { login } from "src/lib/services/apis";
 import { useLocation } from "react-router-dom";
 const Home = () => {
   const { countVal } = useSelector(counter);
   let location = useLocation();
   console.log(location);
   useEffect(() => {
-    const body = { name: "Rachel", profession: "Doctor" };
+    const body = { email: "john@mail.com", password: "changeme" };
     login(body)
       .then((response) => {
         console.log(response, "--->response");

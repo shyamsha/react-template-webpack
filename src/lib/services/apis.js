@@ -8,16 +8,14 @@ const API_ENDPOINT = isProd
   ? config.production.api_endpoint
   : config.development.api_endpoint;
 
+export const test = () => {
+  const url = `${API_ENDPOINT}/test`;
+  return API.get(url);
+};
 export const login = (params) => {
-  const url = `${API_ENDPOINT}/login`;
-  const config = { ...requestConfig };
+  const url = `${API_ENDPOINT}/auth/login/`;
 
-  config.headers = {
-    "Content-Type": "application/x-www-form-urlencoded",
-    Accept: "application/json",
-  };
-
-  return API.post(url, params, config);
+  return API.post(url, params);
 };
 
 export const exportSpreadSheet = (params) => {
