@@ -6,16 +6,6 @@ export const ErrorMessages = {
   INTERNAL_SERVER_ERROR: "Internal Server Error",
 };
 
-axios.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    if (error.response.status === 401) {
-      clearFromLocalStorage("x-session-id");
-    }
-    return Promise.reject(error);
-  }
-);
-
 export const get500ErrorMessage = (err) => {
   if (err.response && err.response && err.response.status === 500) {
     return (err.message = ErrorMessages.INTERNAL_SERVER_ERROR);
