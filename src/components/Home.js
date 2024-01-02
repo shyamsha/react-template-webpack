@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useGetProductQuery } from "src/lib/services/api";
 import { useSelector } from "react-redux";
 import { counter } from "../store/reducerFunctions";
-// import { login } from "src/lib/services/apis";
 // import { useLocation } from "react-router-dom";
 const Home = () => {
   const { countVal } = useSelector(counter);
@@ -18,7 +17,7 @@ const Home = () => {
   //       console.log(err, "-->error");
   //     });
   // }, []);
-  const { data: product, error, isLoading } = useGetProductQuery(2);
+  const { data: product, error, isLoading } = useGetProductQuery(72);
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.statusText}</div>;

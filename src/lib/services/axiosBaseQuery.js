@@ -38,7 +38,7 @@ const axiosBaseQuery = ({ prepareHeaders, meta, transformResponse } = {}) => {
         error: {
           status: err.response?.status,
           statusText: err.response?.statusText,
-          data: err.response || err.message,
+          data: err.response?.data || err.message,
         },
         meta,
       };
