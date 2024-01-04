@@ -1,5 +1,5 @@
 import axiosBaseQuery from "./axiosBaseQuery";
-import { createApi } from "@reduxjs/toolkit/query/react";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const apiSlice = createApi({
   reducerPath: "apiSlice",
@@ -10,7 +10,22 @@ export const apiSlice = createApi({
     getProduct: builder.query({
       query: (id) => `/products/${id}`,
     }),
+    login: builder.mutation({
+      query: (user) => ({
+        url: `/auth/login`,
+        method: "POST",
+        body: user,
+      }),
+    }),
+    update: builder.mutation({
+      query: ({ updateProduct, id }) => ({
+        url: `/products/${id}`,
+        method: "PUT",
+        body: updateProduct,
+      }),
+    }),
   }),
 });
 
-export const { useGetProductQuery } = apiSlice;
+export const { useGetProductQuery, useLoginMutation, useUpdateMutation } =
+  apiSlice;
