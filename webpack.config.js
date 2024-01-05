@@ -139,6 +139,6 @@ module.exports = (env) => {
         chunkFilename: "[id].css",
       }),
     ],
-    devtool,
+    devtool: "source-map",
   };
 };
